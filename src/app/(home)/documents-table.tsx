@@ -41,7 +41,7 @@ export const DocumentsTable = ({
                             <TableHead className="hidden md:table-cell">Created at</TableHead>
                         </TableRow>
                     </TableHeader>
-                    {documents.length === 0  ? (
+                    {documents.length === 0 ? (
                         <TableBody>
                             <TableRow className="hover:bg-transparent">
                                 <TableCell colSpan={4} className="h24 text-center text-muted-foreground">
