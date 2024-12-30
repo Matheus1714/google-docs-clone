@@ -3,7 +3,6 @@ import { preloadQuery } from "convex/nextjs";
 
 import { Id } from "../../../../convex/_generated/dataModel";
 import { Document } from "./document";
-import { preload } from "react-dom";
 import { api } from "../../../../convex/_generated/api";
 
 interface DocumentIdPageProps {
