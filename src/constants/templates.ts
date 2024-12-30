@@ -3,11 +3,15 @@ export const templates = [
     id: "blank-document",
     label: "Blank Document",
     imageUrl: "/blank-document.svg",
+    initialContent: "",
   },
   {
     id: "software-proposal",
     label: "Software Proposal",
     imageUrl: "/software-proposal.svg",
+    initialContent: `
+      <h1>A software proposal</h1>
+    `
   },
   {
     id: "project-proposal",
