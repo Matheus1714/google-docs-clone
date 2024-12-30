@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { useStorage, useMutation } from "@liveblocks/react";
 import { FaCaretDown } from "react-icons/fa";
 
 const markers = Array.from({ length: 83 }, (_, i) => i);
@@ -7,8 +8,15 @@ export const Ruler = () => {
   const PAGE_WIDTH = 816;
   const MINIMUM_SPACE = 56;
 
-  const [leftMargin, setLeftMargin] = useState(MINIMUM_SPACE);
-  const [rightMargin, setRightMargin] = useState(MINIMUM_SPACE);
+  const leftMargin = useStorage((root) => root.leftMargin) ?? 56;
+  const setLeftMargin = useMutation(({ storage }, position: number) => {
+    storage.set("leftMargin", position);
+  }, []);
+
+  const rightMargin = useStorage((root) => root.rightMargin) ?? 56;
+  const setRightMargin = useMutation(({ storage }, position: number) => {
+    storage.set("rightMargin", position);
+  }, []);
 
   const [isDraggingLeft, setIsDraggingLeft] = useState(false);
   const [isDraggingRight, setIsDraggingRight] = useState(false);
