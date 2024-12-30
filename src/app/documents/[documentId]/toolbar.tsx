@@ -87,7 +87,7 @@ const LineHeightButton = () => {
             className={cn(
               "flex items-center gap-x-2 px-2 py-1 rounded-sm hover:bg-neutral-200/80",
               editor?.getAttributes("paragraph").lineHeight === value &&
-                "bg-neutral-200/80",
+              "bg-neutral-200/80",
             )}
           >
             <span className="text-sm">{label}</span>
@@ -489,8 +489,8 @@ const HeadingLevelButton = () => {
             className={cn(
               "flex items-center gap-x-2 px-2 py-1 rounded-sm hover:bg-neutral-200/80",
               (value === 0 && !editor?.isActive("heading")) ||
-                (editor?.isActive("heading", { level: value }) &&
-                  "bg-neutral-200/80"),
+              (editor?.isActive("heading", { level: value }) &&
+                "bg-neutral-200/80"),
             )}
             style={{ fontSize }}
           >
@@ -531,7 +531,7 @@ const FontFamilyButton = () => {
             className={cn(
               "flex items-center gap-x-2 px-2 py-1 rounded-sm hover:bg-neutral-200/80",
               editor?.getAttributes("textStyle").fontFamily === value &&
-                "bg-neutral-200/80",
+              "bg-neutral-200/80",
             )}
             style={{ fontFamily: value }}
           >
@@ -570,74 +570,74 @@ export const Toolbar = () => {
     onClick: () => void;
     isActive?: boolean;
   }[][] = [
-    [
-      {
-        label: "Undo",
-        icon: Undo2Icon,
-        onClick: () => editor?.chain().focus().undo().run(),
-      },
-      {
-        label: "Redo",
-        icon: Redo2Icon,
-        onClick: () => editor?.chain().focus().redo().run(),
-      },
-      {
-        label: "Print",
-        icon: PrinterIcon,
-        onClick: () => window.print(),
-      },
-      {
-        label: "Spell Check",
-        icon: SpellCheckIcon,
-        onClick: () => {
-          const current = editor?.view.dom.getAttribute("spellcheck");
-          editor?.view.dom.setAttribute(
-            "spellcheck",
-            current === "false" ? "true" : "false",
-          );
+      [
+        {
+          label: "Undo",
+          icon: Undo2Icon,
+          onClick: () => editor?.chain().focus().undo().run(),
         },
-      },
-    ],
-    [
-      {
-        label: "Bold",
-        icon: BoldIcon,
-        isActive: editor?.isActive("bold"),
-        onClick: () => editor?.chain().focus().toggleBold().run(),
-      },
-      {
-        label: "Italic",
-        icon: ItalicIcon,
-        isActive: editor?.isActive("italic"),
-        onClick: () => editor?.chain().focus().toggleItalic().run(),
-      },
-      {
-        label: "Underline",
-        icon: UnderlineIcon,
-        isActive: editor?.isActive("underline"),
-        onClick: () => editor?.chain().focus().toggleUnderline().run(),
-      },
-    ],
-    [
-      {
-        label: "Comment",
-        icon: MessageSquarePlusIcon,
-        isActive: false,
-        onClick: () => console.log("cliked"),
-      },
-      {
-        label: "List ToDo",
-        icon: ListTodoIcon,
-        isActive: editor?.isActive("tasklist"),
-        onClick: () => editor?.chain().focus().toggleTaskList().run(),
-      },
-      {
-        label: "Remove Formatting",
-        icon: RemoveFormattingIcon,
-        onClick: () => editor?.chain().focus().unsetAllMarks().run(),
-      },
-    ],
-  ];
+        {
+          label: "Redo",
+          icon: Redo2Icon,
+          onClick: () => editor?.chain().focus().redo().run(),
+        },
+        {
+          label: "Print",
+          icon: PrinterIcon,
+          onClick: () => window.print(),
+        },
+        {
+          label: "Spell Check",
+          icon: SpellCheckIcon,
+          onClick: () => {
+            const current = editor?.view.dom.getAttribute("spellcheck");
+            editor?.view.dom.setAttribute(
+              "spellcheck",
+              current === "false" ? "true" : "false",
+            );
+          },
+        },
+      ],
+      [
+        {
+          label: "Bold",
+          icon: BoldIcon,
+          isActive: editor?.isActive("bold"),
+          onClick: () => editor?.chain().focus().toggleBold().run(),
+        },
+        {
+          label: "Italic",
+          icon: ItalicIcon,
+          isActive: editor?.isActive("italic"),
+          onClick: () => editor?.chain().focus().toggleItalic().run(),
+        },
+        {
+          label: "Underline",
+          icon: UnderlineIcon,
+          isActive: editor?.isActive("underline"),
+          onClick: () => editor?.chain().focus().toggleUnderline().run(),
+        },
+      ],
+      [
+        {
+          label: "Comment",
+          icon: MessageSquarePlusIcon,
+          isActive: editor?.isActive("liveblocksCommentMark"),
+          onClick: () => editor?.chain().focus().addPendingComment().run(),
+        },
+        {
+          label: "List ToDo",
+          icon: ListTodoIcon,
+          isActive: editor?.isActive("tasklist"),
+          onClick: () => editor?.chain().focus().toggleTaskList().run(),
+        },
+        {
+          label: "Remove Formatting",
+          icon: RemoveFormattingIcon,
+          onClick: () => editor?.chain().focus().unsetAllMarks().run(),
+        },
+      ],
+    ];
   return (
     <div className="bg-[#F1F4F9] px-2.5 rounded-[24px] min-h-[40px] flex items-center gap-x-0.5 overflow-x-auto">
       {sections[0].map((item) => (
