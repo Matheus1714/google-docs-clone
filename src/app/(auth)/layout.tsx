@@ -1,9 +1,9 @@
-interface AuthwwLayoutProps {
+interface AuthLayoutProps {
   children: React.ReactNode;
 }
 
-const AuthwwLayout = ({ children }: AuthwwLayoutProps) => {
+const AuthLayout = ({ children }: AuthLayoutProps) => {
   return <div>{children}</div>;
 };
 
-export default AuthwwLayout;
+export default AuthLayout;

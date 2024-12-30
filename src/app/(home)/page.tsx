@@ -2,7 +2,7 @@
 
 import { usePaginatedQuery } from "convex/react";
 import { Navbar } from "./navbar";
-import { TemplatesGalery } from "./templates-galery";
+import { TemplatesGallery } from "./templates-gallery";
 import { api } from "../../../convex/_generated/api";
 import { DocumentsTable } from "./documents-table";
 import { useSearchParam } from "@/hooks/use-search-param";
@@ -22,7 +22,7 @@ const Home = () => {
         <Navbar />
       </div>
       <div className="mt-16">
-        <TemplatesGalery />
+        <TemplatesGallery />
         <DocumentsTable
           documents={results}
           loadMore={loadMore}
