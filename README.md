@@ -1,8 +1,10 @@
 # Google Docs Clone
 
-![Build Status](https://img.shields.io/github/actions/workflow/status/Matheus1714/google-docs-clone/master.yaml?branch=master&style=for-the-badge)
+<!-- ![Build Status](https://img.shields.io/github/actions/workflow/status/Matheus1714/google-docs-clone/master.yaml?branch=master&style=for-the-badge) -->
 ![Latest Release](https://img.shields.io/github/v/release/Matheus1714/google-docs-clone?style=for-the-badge)
 ![License](https://img.shields.io/github/license/Matheus1714/google-docs-clone?style=for-the-badge)
+
+![](.github/imgs/banner.png)s
 
 This project is a functional clone of **Google Docs**, built using modern web technologies including `React`, `Next.js`, and `Tailwind CSS`. It allows users to **create**, **edit**, and **manage documents in real-time**, offering a streamlined and responsive user experience.
 
